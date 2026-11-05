@@ -235,6 +235,7 @@
 
   .pick1 .pick-badge { background: var(--accent); color: #0d0f14; }
   .pick2 .pick-badge { background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }
+  .pick3 .pick-badge { background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }
 
   .pick-car {
     font-size: 18px;
@@ -425,10 +426,12 @@ function analyze() {
 
   const pick1 = ranked[0];
   const pick2 = ranked.length > 1 ? ranked[1] : null;
+  const pick3 = ranked.length > 2 ? ranked[2] : null;
 
   let html = `<div class="section-label">Recommendation</div>`;
   html += renderPick(pick1, 'pick1', '🥇 Pick 1');
-  if (pick2) html += renderPick(pick2, 'pick2', '⬆️ Pick 2');
+  if (pick2) html += renderPick(pick2, 'pick2', '🥈 Pick 2');
+  if (pick3) html += renderPick(pick3, 'pick3', '🥉 Pick 3');
 
   document.getElementById('results').innerHTML = html;
   document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
